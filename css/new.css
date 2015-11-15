@@ -1,0 +1,102 @@
+/* reset */
+body,form,h1,h2,h3,h4,h5,ul,ol,li,dl,dt,dd,p,input,textarea,table,th,td,iframe{margin:0;padding:0}
+body,input,textarea{font-size:12px;font-family:microsoft yahei}
+input,textarea{outline:none;}
+textarea{ resize:none;}
+ul,ol{list-style:none}
+img{border:0}
+button,input {line-height:normal;*overflow:visible}
+a{ text-decoration:none; cursor:pointer;}
+
+body{
+	background-color: #282828;
+}
+
+.wrap{
+	background-color: #2f363d;
+	max-width: 2000px;
+	margin: 0 auto;
+	min-height: 1000px;
+}
+
+.inner{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/*顶部公用模块 start*/
+.wrap-top{
+	height: 60px;
+	background-color: #202325;
+	line-height: 60px;
+}
+.wrap-top-inner h1{
+	float: left;
+	color: #fecb2f;
+	font-size: 20px;
+}
+.wrap-top-inner div{
+	float: right;
+	color: #2bfece;
+}
+.search{
+	margin-top: 17px;
+}
+.user-login{
+	width: 140px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.user-login span{
+	display: inline-block;
+	margin-right: 20px;
+}
+.wrap-top-inner div input{
+	border: none;
+	border-radius: 3px;
+	height: 25px;
+	background-color: #4d5357;
+	color: #fff;
+}
+.wrap-top-inner div button{
+	background-color: #ff3f2b;
+	border: none;
+	color: #fff;
+	border-radius: 3px;
+	width: 60px;
+	height: 25px;
+	text-align: center;
+}
+.wrap-top-inner div a{
+	color: #2bfece;
+}
+/*顶部公用模块 end*/
+
+/*顶部绿条 start*/
+.wrap-tip{
+	height: 40px;
+	background-color: #00ffcd;
+	color: #000;
+	font-size: 16px;
+	overflow: hidden;
+}
+.wrap-tip a{
+	width: 150px;
+	text-align: center;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+}
+.wrap-tip .cover{
+	color: #1aad90;
+}
+/*顶部绿条 end*/
+
+/*页尾版权声明 start*/
+.wrap-bottom-inner{
+	color: #505962;
+	text-align: center;
+	height: 150px;
+	line-height: 150px;
+}
+/*页尾版权声明 end*/
