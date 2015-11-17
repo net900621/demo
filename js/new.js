@@ -70,7 +70,7 @@ $(function () {
             enabled: false
         },
         legend: {
-            layout: 'horizontal', //or vertical
+            layout: 'horizontal', //default is horizontal, it can change to vertical
             itemDistance: 20,
             align: 'right',
             verticalAlign: 'bottom',
@@ -103,24 +103,35 @@ $(function () {
         chart: {
             type: 'bar',
             backgroundColor: null,
+            marginLeft: 92,
             events: {
                 load: legendTitleMove,
                 redraw: legendTitleMove
             }
         },
         title: {
-            text: '版本'
+            text: '<p><span style="color: #3EFFCC; font-size: 20px;">版本 </span><span style="color: #B0B7AE; font-size: 14px;"> 当日累计新增用户TOP10</span></p>',
+            align: 'left'
         },
         subtitle: {
             text: null
         },
         xAxis: {
             categories: [3.3,3.2,3.1,2.6,2.3,2.1,1.6,1.4,1.3,1.1],
+            labels: {
+                style: {color: '#B0B7AE'}
+            },
+            tickWidth: 0,//刻度线宽度为0
+            tickLength: 0,//刻度线长度为0
+            lineWidth: 0,//刻度线宽度为0
             title: {
                 text: null
             }
         },
         yAxis: {
+            gridLineColor: '#4d5357',
+            max: Math.max.apply(null, this.series.data) + 1,
+            labels: {style: {color: '#B0B7AE'}},
             title: {
                 text: null
             }
@@ -130,7 +141,7 @@ $(function () {
         },
         plotOptions: {
             series: {
-                fillColor: '#ff0000'
+                borderColor: null//去掉条形图的边框
             },
             column:{
                 borderColor: "",//去边框
@@ -167,11 +178,111 @@ $(function () {
                 enabled: true,
                 color: '#000000',
                 align: 'right',
-                //format: '{point.y:.1f}', // one decimal
-                //y: 10, // 10 pixels down from the top
+                shadow: false,
                 style: {
                     fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
+                    fontWeight: 'normal'
+                }
+            }
+        }]
+    });
+
+    $('.chart-bar-comp').highcharts({
+        chart: {
+            type: 'bar',
+            backgroundColor: null,
+            marginLeft: 105,
+            events: {
+                load: legendTitleMove,
+                redraw: legendTitleMove
+            }
+        },
+        title: {
+            text: '<p><span style="color: #3EFFCC; font-size: 20px;">渠道 </span><span style="color: #B0B7AE; font-size: 14px;"> 当日累计新增用户TOP10</span></p>',
+            align: 'left'
+        },
+        subtitle: {
+            text: null
+        },
+        xAxis: {
+            categories: ['渠道1', '渠道2', '渠道3', '渠道4', '渠道5', '渠道6', '渠道7', '渠道8'],
+            labels: {
+                style: {color: '#B0B7AE'}
+            },
+            tickWidth: 0,//刻度线宽度为0
+            tickLength: 0,//刻度线长度为0
+            lineWidth: 0,//刻度线宽度为0
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            gridLineColor: '#4d5357',
+            labels: {style: {color: '#B0B7AE'}},
+            title: {
+                text: null
+            }
+        },
+        tooltip: {
+            valueSuffix: ' todo'
+        },
+        plotOptions: {
+            series: {
+                borderColor: null
+            },
+            column:{
+                borderColor: "",//去边框
+                shadow: false//去阴影
+            }
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'right',
+            verticalAlign: 'bottom',
+            itemStyle: {
+                color: '#ffffff',
+                fontWeight: 'normal'
+            },
+            title: {
+                text: '对比：',
+                style: {
+                    color: '#ffffff'
+                }
+            },
+            x: -100
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [{
+            name: '今日',
+            color: '#fa348d',
+            data: [83,80,72,68,62,54,40,30],
+            dataLabels: {
+                enabled: true,
+                color: '#000000',
+                align: 'right',
+                shadow: false,
+                style: {
+                    fontSize: '12px',
+                    fontWeight: 'normal'
+                }
+            }
+        }, {
+            name: '昨日',
+            color: '#3effcc',
+            data: [87,74,92,78,34,63,37,45],
+            dataLabels: {
+                enabled: true,
+                color: '#000000',
+                align: 'right',
+                shadow: false,
+                style: {
+                    fontSize: '12px',
+                    fontWeight: 'normal'
                 }
             }
         }]
