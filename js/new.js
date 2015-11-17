@@ -130,7 +130,7 @@ $(function () {
         },
         yAxis: {
             gridLineColor: '#4d5357',
-            max: Math.max.apply(null, this.series.data) + 1,
+            max: 100,
             labels: {style: {color: '#B0B7AE'}},
             title: {
                 text: null
@@ -141,11 +141,19 @@ $(function () {
         },
         plotOptions: {
             series: {
-                borderColor: null//去掉条形图的边框
-            },
-            column:{
-                borderColor: "",//去边框
-                shadow: false       //去阴影
+                shadow: false,
+                borderColor: null,//去掉条形图的边框
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    align: 'right',
+                    shadow: false,
+                    style: {
+                        fontSize: '13px',
+                        fontWeight: 'normal',
+                        textShadow: false
+                    }
+                }
             }
         },
         legend: {
@@ -173,17 +181,7 @@ $(function () {
         series: [{
             name: '今日',
             color: '#3effcc',
-            data: [96,82,76,57,49,42,38,24,20,8],
-            dataLabels: {
-                enabled: true,
-                color: '#000000',
-                align: 'right',
-                shadow: false,
-                style: {
-                    fontSize: '13px',
-                    fontWeight: 'normal'
-                }
-            }
+            data: [96,82,76,57,49,42,38,24,20,8]
         }]
     });
 
@@ -228,11 +226,18 @@ $(function () {
         },
         plotOptions: {
             series: {
-                borderColor: null
-            },
-            column:{
-                borderColor: "",//去边框
-                shadow: false//去阴影
+                shadow: false,
+                borderColor: null,
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    align: 'right',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 'normal',
+                        textShadow: false
+                    }
+                }
             }
         },
         legend: {
@@ -260,31 +265,11 @@ $(function () {
         series: [{
             name: '今日',
             color: '#fa348d',
-            data: [83,80,72,68,62,54,40,30],
-            dataLabels: {
-                enabled: true,
-                color: '#000000',
-                align: 'right',
-                shadow: false,
-                style: {
-                    fontSize: '12px',
-                    fontWeight: 'normal'
-                }
-            }
+            data: [83,80,72,68,62,54,40,30]
         }, {
             name: '昨日',
             color: '#3effcc',
-            data: [87,74,92,78,34,63,37,45],
-            dataLabels: {
-                enabled: true,
-                color: '#000000',
-                align: 'right',
-                shadow: false,
-                style: {
-                    fontSize: '12px',
-                    fontWeight: 'normal'
-                }
-            }
+            data: [87,74,92,78,34,63,37,45]
         }]
     });
 });
