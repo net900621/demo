@@ -92,6 +92,67 @@ body{
 }
 /*顶部绿条 end*/
 
+/*业务区域 start*/
+.wrap-content{
+
+}
+.wrap-content-top{
+	height: 175px;
+}
+.wrap-content-top-title{
+	height: 70px;
+}
+.wrap-content-top-title h2{
+	color: #e2e8d5;
+	font-size: 20px;
+	line-height: 70px;
+}
+.wrap-content-top-tab{
+	height: 105px;
+}
+.wrap-content-top-tab .tab{
+	width: 284px;
+	border-right: 1px #000 solid;
+	padding-left: 15px;
+	float: left;
+	background-color: #b0b7ae;
+	height: 90px;
+	margin-top: 15px;
+}
+.wrap-content-top-tab .tab h3{
+	height: 30px;
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 30px;
+}
+.wrap-content-top-tab .tab div{
+	padding-top: 5px;
+	font-size: 14px;
+}
+.wrap-content-top-tab .tab div .up{
+	color: #2fb058;
+}
+.wrap-content-top-tab .tab div .down{
+	color: #dc413f;
+}
+.wrap-content-top-tab .tab p{
+	font-size: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-weight: bold;
+	padding-right: 15px;
+}
+.wrap-content-top-tab div.cur{
+	height: 105px;
+	margin-top: 0px;
+	background-color: #f0f6e1;
+}
+.wrap-content-top-tab div.cur h3{
+	height: 45px;
+}
+/*业务区域 end*/
+
+
 /*折线图 start*/
 .chart-line{
 	width: 100%;
