@@ -97,7 +97,12 @@ $(function () {
             data: [34,42,23,22,21,20,32,37,43,35,57,67,63,64,72,78,84,65,80,68,73,62,65]
         }]
     });
-    
+    $('#chart-line-add').click(function () {
+        var chart1 = $('.chart-line').highcharts();
+        chart1.addSeries({
+            data: [194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5]
+        });
+    });
     
     $('.chart-bar').highcharts({
         chart: {
@@ -142,14 +147,15 @@ $(function () {
         plotOptions: {
             series: {
                 shadow: false,
-                borderColor: null,//去掉条形图的边框
+                borderColor: null,
+                //pointPadding: 0,
+                groupPadding: 0.1,
                 dataLabels: {
                     enabled: true,
                     color: '#000000',
                     align: 'right',
-                    shadow: false,
                     style: {
-                        fontSize: '13px',
+                        fontSize: '12px',
                         fontWeight: 'normal',
                         textShadow: false
                     }
@@ -183,6 +189,12 @@ $(function () {
             color: '#3effcc',
             data: [96,82,76,57,49,42,38,24,20,8]
         }]
+    });
+    $('#chart-bar-add').click(function () {
+        var chart2 = $('.chart-bar').highcharts();
+        chart2.addSeries({
+            data: [94, 9, 54, 29, 71, 86, 59, 44, 76, 35]
+        });
     });
 
     $('.chart-bar-comp').highcharts({
@@ -228,6 +240,9 @@ $(function () {
             series: {
                 shadow: false,
                 borderColor: null,
+                //pointPadding: 0,
+                groupPadding: 0.1,
+                crop: false,
                 dataLabels: {
                     enabled: true,
                     color: '#000000',
@@ -271,5 +286,11 @@ $(function () {
             color: '#3effcc',
             data: [87,74,92,78,34,63,37,45]
         }]
+    });
+    $('#chart-bar-comp-add').click(function () {
+        var chart3 = $('.chart-bar-comp').highcharts();
+        chart3.addSeries({
+            data: [19, 59, 64, 49, 121, 96, 59, 44]
+        });
     });
 });

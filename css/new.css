@@ -1,13 +1,13 @@
 /* reset */
-body,form,h1,h2,h3,h4,h5,ul,ol,li,dl,dt,dd,p,input,textarea,table,th,td,iframe{margin:0;padding:0}
+body,form,h1,h2,h3,h4,h5,ul,ol,li,dl,dt,dd,p,input,textarea,table,th,td,iframe,button{margin:0;padding:0}
 body,input,textarea{font-size:12px;font-family:microsoft yahei}
 input,textarea{outline:none;}
 textarea{ resize:none;}
 ul,ol{list-style:none}
-img{border:0}
+img,button{border:0}
 button,input {line-height:normal;*overflow:visible}
 a{ text-decoration:none; cursor:pointer;}
-
+button{outline: none;}
 body{
 	background-color: #282828;
 }
@@ -163,10 +163,33 @@ body{
 /*条形图 start*/
 .chart-bar, .chart-bar-comp{
 	width: 50%;
+
 	height: 510px;
 	display: inline-block;
 }
 /*条形图 end*/
+
+/*todo 添加数据 start*/
+.addData{
+	background-color: #ff0000;
+	color: #ffffff;
+}
+#chart-line-add{
+	position: absolute;
+	top: 662px;
+	right: 100px;
+}
+#chart-bar-add{
+	position: absolute;
+	top: 1170px;
+	left: 570px;
+}
+#chart-bar-comp-add{
+	position: absolute;
+	top: 1170px;
+	left: 1160px;
+}
+/*todo 添加数据 end*/
 
 /*页尾版权声明 start*/
 .wrap-bottom-inner{
