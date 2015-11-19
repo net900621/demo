@@ -1,9 +1,24 @@
-$(function () {
-    function legendTitleMove(e) {
+var chartTools = {
+    legendTitleMove: function() {
         var title = this.legend.title;
         title.translate(-40, 24);
+    },
+    setTitle: function(el, title) {
+        var titleStr = '<p>';
+        if(title && title.h1) {
+            titleStr += '<span style="color: ' + title.h1.color + '; font-size: ' + title.h1.fontSize + ';">' + title.h1.txt + ' </span>';
+        }
+        if(title && title.h2) {
+            titleStr += '<span style="color: ' + title.h2.color + '; font-size: ' + title.h2.fontSize + ';">' + title.h2.txt + '</span>';
+        }
+        titleStr += '</p>';
+        el.highcharts().setTitle({
+            text: titleStr
+        });
     }
-    $('.chart-line').highcharts({
+};
+function lineChart(el, options) {
+    var settings = {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -11,20 +26,15 @@ $(function () {
             type: 'line',
             backgroundColor: null,
             events: {
-                load: legendTitleMove,
-                redraw: legendTitleMove
+                load: chartTools.legendTitleMove,
+                redraw: chartTools.legendTitleMove
             }
         },
         title: {
-            text: '时段新增曲线',
-            align: 'left',
-            style: {
-                color: '#3effcc',
-                fontSize: '15px'
-            }
+            align: 'left'
         },
         xAxis: {
-            categories: [01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+            categories: [],
             tickInterval: 1,
             tickmarkPlacement: 'on',//设置刻度线位于在类别名称的中心
             tickLength: 5,//设置刻度线的长度
@@ -87,42 +97,31 @@ $(function () {
             },
             x: -150
         },
-        series: [{
-            name: '今日',
-            color: '#3effcc',
-            data: [35,22,16,20,18,23,38,35,46,53,50,64,65,66,67,73,77,70,84,80,71,70,73]
-        }, {
-            name: '昨日',
-            color: '#fa348d',
-            data: [34,42,23,22,21,20,32,37,43,35,57,67,63,64,72,78,84,65,80,68,73,62,65]
-        }]
-    });
-    $('#chart-line-add').click(function () {
-        var chart1 = $('.chart-line').highcharts();
-        chart1.addSeries({
-            data: [194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5]
-        });
-    });
-    
-    $('.chart-bar').highcharts({
+        series: []
+    };
+    el.highcharts($.extend(true,{}, settings, options));
+    chartTools.setTitle(el, options.title);
+}
+
+function barChart(el, options) {
+    var settings = {
         chart: {
             type: 'bar',
             backgroundColor: null,
             marginLeft: 92,
             events: {
-                load: legendTitleMove,
-                redraw: legendTitleMove
+                load: chartTools.legendTitleMove,
+                redraw: chartTools.legendTitleMove
             }
         },
         title: {
-            text: '<p><span style="color: #3EFFCC; font-size: 20px;">版本 </span><span style="color: #B0B7AE; font-size: 14px;"> 当日累计新增用户TOP10</span></p>',
             align: 'left'
         },
         subtitle: {
             text: null
         },
         xAxis: {
-            categories: [3.3,3.2,3.1,2.6,2.3,2.1,1.6,1.4,1.3,1.1],
+            categories: [],
             labels: {
                 style: {color: '#B0B7AE'}
             },
@@ -135,7 +134,7 @@ $(function () {
         },
         yAxis: {
             gridLineColor: '#4d5357',
-            max: 100,
+            max: 100,//todo
             labels: {style: {color: '#B0B7AE'}},
             title: {
                 text: null
@@ -184,113 +183,8 @@ $(function () {
         exporting: {
             enabled: false
         },
-        series: [{
-            name: '今日',
-            color: '#3effcc',
-            data: [96,82,76,57,49,42,38,24,20,8]
-        }]
-    });
-    $('#chart-bar-add').click(function () {
-        var chart2 = $('.chart-bar').highcharts();
-        chart2.addSeries({
-            data: [94, 9, 54, 29, 71, 86, 59, 44, 76, 35]
-        });
-    });
-
-    $('.chart-bar-comp').highcharts({
-        chart: {
-            type: 'bar',
-            backgroundColor: null,
-            marginLeft: 105,
-            events: {
-                load: legendTitleMove,
-                redraw: legendTitleMove
-            }
-        },
-        title: {
-            text: '<p><span style="color: #3EFFCC; font-size: 20px;">渠道 </span><span style="color: #B0B7AE; font-size: 14px;"> 当日累计新增用户TOP10</span></p>',
-            align: 'left'
-        },
-        subtitle: {
-            text: null
-        },
-        xAxis: {
-            categories: ['渠道1', '渠道2', '渠道3', '渠道4', '渠道5', '渠道6', '渠道7', '渠道8'],
-            labels: {
-                style: {color: '#B0B7AE'}
-            },
-            tickWidth: 0,//刻度线宽度为0
-            tickLength: 0,//刻度线长度为0
-            lineWidth: 0,//刻度线宽度为0
-            title: {
-                text: null
-            }
-        },
-        yAxis: {
-            gridLineColor: '#4d5357',
-            labels: {style: {color: '#B0B7AE'}},
-            title: {
-                text: null
-            }
-        },
-        tooltip: {
-            valueSuffix: ' todo'
-        },
-        plotOptions: {
-            series: {
-                shadow: false,
-                borderColor: null,
-                //pointPadding: 0,
-                groupPadding: 0.1,
-                crop: false,
-                dataLabels: {
-                    enabled: true,
-                    color: '#000000',
-                    align: 'right',
-                    style: {
-                        fontSize: '12px',
-                        fontWeight: 'normal',
-                        textShadow: false
-                    }
-                }
-            }
-        },
-        legend: {
-            layout: 'horizontal',
-            align: 'right',
-            verticalAlign: 'bottom',
-            itemStyle: {
-                color: '#ffffff',
-                fontWeight: 'normal'
-            },
-            title: {
-                text: '对比：',
-                style: {
-                    color: '#ffffff'
-                }
-            },
-            x: -100
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        series: [{
-            name: '今日',
-            color: '#fa348d',
-            data: [83,80,72,68,62,54,40,30]
-        }, {
-            name: '昨日',
-            color: '#3effcc',
-            data: [87,74,92,78,34,63,37,45]
-        }]
-    });
-    $('#chart-bar-comp-add').click(function () {
-        var chart3 = $('.chart-bar-comp').highcharts();
-        chart3.addSeries({
-            data: [19, 59, 64, 49, 121, 96, 59, 44]
-        });
-    });
-});
+        series: []
+    };
+    el.highcharts($.extend(true, {}, settings, options));
+    chartTools.setTitle(el, options.title);
+}
