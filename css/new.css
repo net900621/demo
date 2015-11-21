@@ -163,7 +163,6 @@ body{
 /*条形图 start*/
 .chart-bar, .chart-bar-comp{
 	width: 50%;
-
 	height: 510px;
 	display: inline-block;
 }

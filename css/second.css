@@ -1,0 +1,16 @@
+.chart-line2{
+	width: 100%;
+	height: 385px;
+}
+.chart-pie1, .chart-pie2{
+	width: 50%;
+	height: 450px;
+	display: inline-block;
+	background-color: #3A4147;
+}
+.chart-pie3, .chart-pie4, .chart-pie5{
+	width: 33.333%;
+	height: 500px;
+	display: inline-block;
+	background-color: #3A4147;
+}

@@ -188,3 +188,75 @@ function barChart(el, options) {
     el.highcharts($.extend(true, {}, settings, options));
     chartTools.setTitle(el, options.title);
 }
+function pieChart(el, options) {
+    var settings = {
+        chart: {
+            type: 'pie',
+            backgroundColor: null,
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+        },
+        title: {
+            text: null,
+            align: 'left'
+        },
+        subtitle: {
+            text: null
+        },
+        tooltip: {
+            pointFormat: '{point.key}占比：<b>{point.percentage:.2f}%</b>'
+        },
+        plotOptions: {
+            series: {
+                innerSize: '75%',
+                shadow: false,
+                borderColor: null,
+                //pointPadding: 0,
+                groupPadding: 0.1,
+                dataLabels: {
+                    enabled: false,
+                    color: '#000000',
+                    align: 'right',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 'normal',
+                        textShadow: false
+                    }
+                }
+            },
+            pie: {
+                allowPointSelect: false,
+                cursor: 'pointer',
+                showInLegend: true
+            }
+        },
+        legend: {
+            useHTML: true,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            // width: 200,
+            // itemWidth: 100,
+            //padding: 3,
+            itemMarginTop: 5,
+            itemMarginBottom: 5,
+            itemStyle: {
+                color: '#ffffff',
+                fontWeight: 'normal'
+            },
+            labelFormatter: function () {
+                return '<p><span style="color: ' + this.color + '">' + this.name + '</span><br><span style="color: ' + this.color + '; margin-left: -21px; font-size: 22px; font-weight: bold;">' + Math.round(this.percentage) + '%</span><br><span style="color: ' + this.color + '; margin-left: -21px;">' + this.y + '</span></p>';
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: []
+    };
+    el.highcharts($.extend(true, {}, settings, options));
+    //chartTools.setTitle(el, options.title);
+}
