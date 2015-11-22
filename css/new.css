@@ -52,6 +52,7 @@ body{
 	margin-right: 20px;
 }
 .wrap-top-inner div input{
+	line-height: 26px;
 	border: none;
 	border-radius: 3px;
 	height: 25px;
