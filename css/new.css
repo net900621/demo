@@ -151,6 +151,9 @@ body{
 .wrap-content-top-tab div.cur h3{
 	height: 45px;
 }
+.wrap-content-inner{
+	position: relative;
+}
 /*业务区域 end*/
 
 
@@ -173,21 +176,25 @@ body{
 .addData{
 	background-color: #ff0000;
 	color: #ffffff;
+	font-size: 14px;
+	padding: 2px 5px;
+	line-height: 14px;
+	border-radius: 4px;
 }
 #chart-line-add{
 	position: absolute;
-	top: 662px;
-	right: 100px;
+	top: 384px;
+	right: 70px;
 }
 #chart-bar-add{
 	position: absolute;
-	top: 1170px;
-	left: 570px;
+	top: 895px;
+	left: 520px;
 }
 #chart-bar-comp-add{
 	position: absolute;
-	top: 1170px;
-	left: 1160px;
+	top: 895px;
+	left: 1120px;
 }
 /*todo 添加数据 end*/
 
