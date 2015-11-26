@@ -9,8 +9,13 @@
 	background-color: #3A4147;
 }
 .chart-pie3, .chart-pie4, .chart-pie5{
-	width: 33.333%;
+	width: 400px;
 	height: 500px;
-	display: inline-block;
+	float: left;
 	background-color: #3A4147;
+}
+div.chart-pie4{
+	padding: 100px 50px;
+	width: 300px;
+	height: 300px;
 }
