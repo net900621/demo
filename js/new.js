@@ -209,7 +209,7 @@ function pieChart(el, options) {
         },
         plotOptions: {
             series: {
-                innerSize: '75%',
+                innerSize: '0%',
                 shadow: false,
                 borderColor: null,
                 //pointPadding: 0,
@@ -259,4 +259,97 @@ function pieChart(el, options) {
     };
     el.highcharts($.extend(true, {}, settings, options));
     //chartTools.setTitle(el, options.title);
+}
+function columnChart(el, options) {
+    var settings = {
+        chart: {
+            //type: 'column',
+            backgroundColor: null
+        },
+        title: {
+            text: 'Stacked column chart'
+        },
+        xAxis: {
+            categories: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+            labels: {
+                style: {color: '#B0B7AE'}
+            },
+            gridLineDashStyle: 'longdash',
+            gridLineColor: '#5E6566',
+            gridLineWidth: 1,
+            tickWidth: 1,//刻度线宽度为0
+            tickLength: 1,//刻度线长度为0
+            lineWidth: 0,//轴线宽度为0
+            title: {
+                text: null
+            }
+        },
+        yAxis: [{
+            gridLineColor: '#4d5357',
+            labels:{
+                style: {color: '#B0B7AE'},
+                format: '{value}'
+            },
+            title:{  //左边y轴的标题
+                text: null
+            }
+        },{
+            gridLineColor: '#4d5357',
+            labels:{
+                style: {color: '#B0B7AE'},
+                format: '{value}%'
+            },
+            title:{  //右边的Y轴
+                text: null
+            },
+            opposite: true//这个属性的作用是说 是否与第一条y轴相反
+        }], 
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            labelFormatter: function () {
+                return '<span style="color: ' + this.color + '">' + this.name + '</span>';
+            }
+        },
+        tooltip: {//todo
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    'Total: ' + this.point.stackTotal;
+            }
+        },
+        plotOptions: {
+            series: {
+                innerSize: '75%',
+                shadow: false,
+                borderColor: null,
+                //pointPadding: 0,
+                groupPadding: 0.1,
+                dataLabels: {
+                    enabled: false,
+                    color: '#000000',
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 'normal',
+                        textShadow: false
+                    }
+                }
+            },
+            column: {
+                
+            },
+            line: {
+                lineWidth: 1
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: []
+    };
+    el.highcharts($.extend(true, {}, settings, options));
 }

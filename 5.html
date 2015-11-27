@@ -1,0 +1,217 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /><meta name="Keywords" content="," />
+<meta name="Description" content="此页面的说明" />
+<link href="css/new.css"  rel="stylesheet" type="text/css"/>
+<link href="css/5.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/highcharts-more.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="js/new.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-top">
+			<div class="wrap-top-inner inner">
+				<h1>这是第5页</h1>
+				<div class="user-login">
+					<span>你好，小萌</span>
+					<a href="">退出</a>
+				</div>
+				<div class="search">
+					<input type="text"><button>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-tip">
+			<div class="wrap-tip-inner inner">
+				<a>实时</a>|<a class="cover">趋势</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="wrap-content-top inner">
+				<div class="wrap-content-top-title"><h2>实时数据</h2></div>
+				<div class="wrap-content-top-tab">
+					<div class="tab cur">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-content-inner inner">
+				<div class="first">
+					<div class="chart-pie16"></div>
+					<div class="chart-pie17"></div>
+				</div>
+				<div class="second">
+					<div class="chart-pie18"></div>
+					<div class="chart-pie19"></div>
+					<div class="chart-bar2"></div>
+					<div class="chart-bar3"></div>
+				</div>
+				<div class="third">
+					<div class="chart-china"></div>
+					<div class="chart-bar4"></div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<div class="wrap-bottom-inner inner">Copyright © 2000-2015 XINHUANET.com All Rights Reserved.</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		pieChart($('.chart-pie16'), {
+	        title: {
+				text: '累计新增用户量<br>15689',
+	            align: 'center',
+	            verticalAlign: 'middle',
+	            x: 40,
+	            style: {
+	            	color: '#ffffff'
+	            }
+			},
+			plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+            legend: {
+	            align: 'left'
+	        },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '未注册', y: 12001, color: '#2BBEF0'},
+	                { name: '已注册', y: 3688, color: '#FEEC5d'}
+                ]
+            }]
+		});
+		pieChart($('.chart-pie17'), {
+	        title: {
+				text: '注册用户<br>3988',
+	            align: 'center',
+	            verticalAlign: 'middle',
+	            x: -50,
+	            style: {
+	            	color: '#ffffff'
+	            }
+			},
+			plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+            legend: {
+	            align: 'right'
+	        },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '手机号注册', y: 761.16, color: '#FB8AB3'},
+	                { name: 'QQ登录', y: 463.68, color: '#D3F897'},
+	                { name: '微博登录', y: 430.56, color: '#BA9DFF'}
+                ]
+            }]
+		});
+		pieChart($('.chart-pie13'), {
+			legend: {
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	        },
+	        plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '1.9', y: 430.356 },
+	                { name: '2.0', y: 397.44 },
+	                {
+	                	name: '2.1',
+	                	y: 331.2,
+	                	selected: true
+	                },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 }
+                ]
+            }]
+		});
+		pieChart($('.chart-pie14'), {
+			chart: {
+				width: 300,
+				height: 300
+			},
+			legend: {
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	        },
+	        plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '应用宝', y: 430.356 },
+	                { name: '安卓市场', y: 397.44 }
+                ]
+            }]
+		});
+		pieChart($('.chart-pie15'), {
+			legend: {
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	        },
+	        plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '1.9', y: 430.356 },
+	                { name: '2.0', y: 397.44 },
+	                {
+	                	name: '2.1',
+	                	y: 331.2,
+	                	selected: true
+	                },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.4', y: 629.28 }
+                ]
+            }]
+		});
+	</script>
+</body>
+</html>

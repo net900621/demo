@@ -1,0 +1,21 @@
+.chart-column-line{
+	width: 100%;
+	height: 385px;
+}
+.chart-pie6, .chart-pie7{
+	width: 50%;
+	height: 450px;
+	display: inline-block;
+	background-color: #3A4147;
+}
+.chart-pie8, .chart-pie9, .chart-pie10{
+	width: 400px;
+	height: 500px;
+	float: left;
+	background-color: #3A4147;
+}
+div.chart-pie9{
+	padding: 100px 50px;
+	width: 300px;
+	height: 300px;
+}

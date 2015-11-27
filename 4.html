@@ -1,0 +1,242 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /><meta name="Keywords" content="," />
+<meta name="Description" content="此页面的说明" />
+<link href="css/new.css"  rel="stylesheet" type="text/css"/>
+<link href="css/4.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/highcharts-more.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="js/new.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-top">
+			<div class="wrap-top-inner inner">
+				<h1>这是第4页</h1>
+				<div class="user-login">
+					<span>你好，小萌</span>
+					<a href="">退出</a>
+				</div>
+				<div class="search">
+					<input type="text"><button>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-tip">
+			<div class="wrap-tip-inner inner">
+				<a>实时</a>|<a class="cover">趋势</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="wrap-content-top inner">
+				<div class="wrap-content-top-title"><h2>实时数据</h2></div>
+				<div class="wrap-content-top-tab">
+					<div class="tab cur">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-content-inner inner">
+				<div class="chart-column-line2"></div>
+				<div class="chart-pie11"></div><!--
+				--><div class="chart-pie12"></div><!--
+				--><div class="chart-pie13"></div><!--
+				--><div class="chart-pie14"></div><!--
+				--><div class="chart-pie15"></div>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<div class="wrap-bottom-inner inner">Copyright © 2000-2015 XINHUANET.com All Rights Reserved.</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		columnChart($('.chart-column-line2'), {
+			series: [{
+	            type: 'column',
+	            name: '次日留存率',
+	            color: '#FA348C',
+	            data: [200, 210, 100, 150, 170, 60, 180, 190, 40, 40, 150, 180, 100, 210, 90, 100, 150, 140, 100, 80, 60, 110, 50, 50, 45, 60, 50, 55, 45, 60, 40],
+	            yAxis : 0
+	        }, {
+	            type: 'line',
+	            name: '新用户',
+	            color: '#42FDFF',
+	            data: [24, 22, 30, 22, 26, 20, 18, 27, 20, 21, 26, 26.5, 19.5, 21.5, 24.6, 18, 16, 26, 29.5, 27.5, 22, 24, 21, 28.5, 20, 20.5, 12, 20, 16.5, 20, 16],
+	            yAxis : 1
+	        }]
+		});
+
+		pieChart($('.chart-pie11'), {
+	        title: {
+				text: '30日累计新增用户量<br>3312',
+	            align: 'center',
+	            verticalAlign: 'middle',
+	            x: -30,
+	            style: {
+	            	color: '#ffffff'
+	            }
+			},
+			plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '1.9', y: 430.356 },
+	                { name: '2.0', y: 397.44 },
+	                {
+	                	name: '2.1',
+	                	y: 331.2,
+	                	selected: true
+	                },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.4', y: 629.28 },
+	                { name: '2.6', y: 761.16 }
+                ]
+            }]
+		});
+		pieChart($('.chart-pie12'), {
+	        title: {
+				text: '30日累计新增用户量<br>3312',
+	            align: 'center',
+	            verticalAlign: 'middle',
+	            x: -60,
+	            style: {
+	            	color: '#ffffff'
+	            }
+			},
+			plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '应用宝', y: 430.356 },
+	                { name: '安卓市场', y: 397.44 },
+	                {
+	                	name: '金山应用市场',
+	                	y: 331.2,
+	                	selected: true
+	                },
+	                { name: '360手机助手', y: 298.08 },
+	                { name: '安智市场', y: 298.08 },
+	                { name: '豌豆荚', y: 463.68 },
+	                { name: '百度手机助手', y: 463.68 },
+	                { name: '91手机助手', y: 463.68 },
+	                { name: '小米商店', y: 629.28 },
+	                { name: 'UC', y: 761.16 }
+                ]
+            }]
+		});
+		pieChart($('.chart-pie13'), {
+			legend: {
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	        },
+	        plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '1.9', y: 430.356 },
+	                { name: '2.0', y: 397.44 },
+	                {
+	                	name: '2.1',
+	                	y: 331.2,
+	                	selected: true
+	                },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 }
+                ]
+            }]
+		});
+		pieChart($('.chart-pie14'), {
+			chart: {
+				width: 300,
+				height: 300
+			},
+			legend: {
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	        },
+	        plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '应用宝', y: 430.356 },
+	                { name: '安卓市场', y: 397.44 }
+                ]
+            }]
+		});
+		pieChart($('.chart-pie15'), {
+			legend: {
+	            layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	        },
+	        plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '1.9', y: 430.356 },
+	                { name: '2.0', y: 397.44 },
+	                {
+	                	name: '2.1',
+	                	y: 331.2,
+	                	selected: true
+	                },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.2', y: 298.08 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.3', y: 463.68 },
+	                { name: '2.4', y: 629.28 }
+                ]
+            }]
+		});
+	</script>
+</body>
+</html>

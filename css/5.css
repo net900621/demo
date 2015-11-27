@@ -1,0 +1,42 @@
+.first{
+	width: 1200px;
+	height: 390px;
+}
+.second{
+	width: 1200px;
+	height: 750px;
+}
+.third{
+	width: 1200px;
+	height: 540px;
+}
+.chart-pie16, .chart-pie18{
+	width: 400px;
+	height: 300px;
+	float: left;
+}
+.chart-pie17{
+	width: 360px;
+	height: 260px;
+	float: left;
+	padding: 20px 0 20px 300px;
+}
+.chart-pie19{
+	width: 300px;
+	height: 620px;
+}
+.chart-bar2{
+	width: 450px;
+	height: 270px;
+}
+.chart-bar3{
+	width: 340px;
+	height: 475px;
+}
+.chart-china{
+
+}
+.chart-bar4{
+	width: 460px;
+	height: 350px;
+}
