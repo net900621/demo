@@ -62,10 +62,14 @@
 					<div class="chart-pie17"></div>
 				</div>
 				<div class="second">
-					<div class="chart-pie18"></div>
-					<div class="chart-pie19"></div>
-					<div class="chart-bar2"></div>
-					<div class="chart-bar3"></div>
+					<div class="second-left">
+						<div class="chart-pie18"></div>
+						<div class="chart-bar2"></div>
+					</div>
+					<div class="second-right">
+						<div class="chart-pie19"></div>
+						<div class="chart-bar3"></div>
+					</div>
 				</div>
 				<div class="third">
 					<div class="chart-china"></div>
@@ -131,86 +135,117 @@
                 ]
             }]
 		});
-		pieChart($('.chart-pie13'), {
-			legend: {
-	            layout: 'horizontal',
+		pieChart($('.chart-pie18'), {
+	        title: {
+				text: '在所选的时间内共产生的注册用户<br>15689',
 	            align: 'center',
-	            verticalAlign: 'bottom',
-	        },
-	        plotOptions: {
+	            verticalAlign: 'middle',
+	            x: -40,
+	            style: {
+	            	color: '#ffffff'
+	            }
+			},
+			plotOptions: {
 	            series: {
 	                innerSize: '75%'
 	            }
             },
+            legend: {
+	            align: 'right'
+	        },
 	        series: [{
 	        	name: 'todo',
 	        	data: [
-	        		{ name: '1.9', y: 430.356 },
-	                { name: '2.0', y: 397.44 },
-	                {
-	                	name: '2.1',
-	                	y: 331.2,
-	                	selected: true
-	                },
-	                { name: '2.2', y: 298.08 },
-	                { name: '2.2', y: 298.08 },
-	                { name: '2.3', y: 463.68 },
-	                { name: '2.3', y: 463.68 }
+	        		{ name: '男', y: 12001, color: '#D2F897'},
+	                { name: '女', y: 3688, color: '#FB8BB3'}
                 ]
             }]
 		});
-		pieChart($('.chart-pie14'), {
+		barChart($('.chart-bar2'), {
 			chart: {
-				width: 300,
-				height: 300
+	            marginLeft: 50
+	        },
+			title: {
+				align: 'left'//默认left，可选left, center, right
 			},
 			legend: {
-	            layout: 'horizontal',
-	            align: 'center',
-	            verticalAlign: 'bottom',
+	            enabled: false
+	        },
+			xAxis: {
+	            categories: ['50后', '60后', '70后', '80后', '90后', '00后']
 	        },
 	        plotOptions: {
 	            series: {
-	                innerSize: '75%'
+	                dataLabels: {
+	                    color: '#3effcc',
+	                    align: 'left'
+	                }
+	            }
+	        },
+	        series: [{
+	            name: null,
+	            color: '#3effcc',
+	            data: [41,101,337,1442,1102,289]
+	        }]
+		});
+		pieChart($('.chart-pie19'), {
+	        title: {
+				text: null
+			},
+			plotOptions: {
+	            series: {
+	                innerSize: 0
 	            }
             },
+            legend: {
+            	layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	            width: 300,
+            	itemWidth: 100,
+	        },
 	        series: [{
 	        	name: 'todo',
 	        	data: [
-	        		{ name: '应用宝', y: 430.356 },
-	                { name: '安卓市场', y: 397.44 }
+	        		{ name: '1.9', y: 430.35, color: '#9DAED9' },
+	                { name: '1.9', y: 397.44, color: '#BF5FFF' },
+	                { name: '2.1', y: 331.20, color: '#BA9DFF' },
+	                { name: '2.2', y: 298.08, color: '#2BBEF0' },
+	                { name: '2.2', y: 298.08, color: '#48EBFE' },
+	                { name: '2.3', y: 463.68, color: '#9EFBF2' },
+	                { name: '2.3', y: 463.68, color: '#D3F897' },
+	                { name: '2.3', y: 463.68, color: '#FEEC5D' },
+	                { name: '2.4', y: 629.28, color: '#FCBE60' },
+	                { name: '2.6', y: 761.16, color: '#FB8AB3' }
                 ]
             }]
 		});
-		pieChart($('.chart-pie15'), {
+		barChart($('.chart-bar3'), {
+			chart: {
+	            marginLeft: 50
+	        },
+			title: {
+				align: 'left'//默认left，可选left, center, right
+			},
 			legend: {
-	            layout: 'horizontal',
-	            align: 'center',
-	            verticalAlign: 'bottom',
+	            enabled: false
+	        },
+			xAxis: {
+	            categories: ['行业', '行业', '行业', '行业', '行业', '行业', '行业', '行业', '行业', '行业', '行业']
 	        },
 	        plotOptions: {
 	            series: {
-	                innerSize: '75%'
+	                dataLabels: {
+	                    color: '#91e9fe',
+	                    align: 'left'
+	                }
 	            }
-            },
+	        },
 	        series: [{
-	        	name: 'todo',
-	        	data: [
-	        		{ name: '1.9', y: 430.356 },
-	                { name: '2.0', y: 397.44 },
-	                {
-	                	name: '2.1',
-	                	y: 331.2,
-	                	selected: true
-	                },
-	                { name: '2.2', y: 298.08 },
-	                { name: '2.2', y: 298.08 },
-	                { name: '2.3', y: 463.68 },
-	                { name: '2.3', y: 463.68 },
-	                { name: '2.3', y: 463.68 },
-	                { name: '2.4', y: 629.28 }
-                ]
-            }]
+	            name: null,
+	            color: '#91e9fe',
+	            data: [10,9,8,6,5,3,2,1.5,1,0.8,0.5]
+	        }]
 		});
 	</script>
 </body>

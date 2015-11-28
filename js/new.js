@@ -1,7 +1,9 @@
 var chartTools = {
     legendTitleMove: function() {
-        var title = this.legend.title;
-        title.translate(-40, 24);
+        if(this.legend.title) {
+            var title = this.legend.title;
+            title.translate(-40, 24);
+        }
     },
     setTitle: function(el, title) {
         var titleStr = '<p>';
@@ -134,14 +136,14 @@ function barChart(el, options) {
         },
         yAxis: {
             gridLineColor: '#4d5357',
-            max: 100,//todo
+            //max: 100,//todo
             labels: {style: {color: '#B0B7AE'}},
             title: {
                 text: null
             }
         },
         tooltip: {
-            valueSuffix: ' millions'
+            valueSuffix: ''
         },
         plotOptions: {
             series: {
@@ -152,7 +154,7 @@ function barChart(el, options) {
                 dataLabels: {
                     enabled: true,
                     color: '#000000',
-                    align: 'right',
+                    align: 'left',
                     style: {
                         fontSize: '12px',
                         fontWeight: 'normal',
@@ -186,7 +188,10 @@ function barChart(el, options) {
         series: []
     };
     el.highcharts($.extend(true, {}, settings, options));
-    chartTools.setTitle(el, options.title);
+    console.log(options.title.h1 || options.title.h2);
+    if(options.title.h1 || options.title.h2) {
+        chartTools.setTitle(el, options.title);
+    }
 }
 function pieChart(el, options) {
     var settings = {

@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /><meta name="Keywords" content="," />
+<meta name="Description" content="此页面的说明" />
+<link href="css/new.css"  rel="stylesheet" type="text/css"/>
+<link href="css/6.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/highcharts-more.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="js/new.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-top">
+			<div class="wrap-top-inner inner">
+				<h1>这是第6页</h1>
+				<div class="user-login">
+					<span>你好，小萌</span>
+					<a href="">退出</a>
+				</div>
+				<div class="search">
+					<input type="text"><button>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-tip">
+			<div class="wrap-tip-inner inner">
+				<a>实时</a>|<a class="cover">趋势</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="wrap-content-top inner">
+				<div class="wrap-content-top-title"><h2>实时数据</h2></div>
+				<div class="wrap-content-top-tab">
+					<div class="tab cur">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-content-inner inner">
+				<div class="chart-column"></div>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<div class="wrap-bottom-inner inner">Copyright © 2000-2015 XINHUANET.com All Rights Reserved.</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		columnChart($('.chart-column'), {
+			series: [{
+	            type: 'column',
+	            name: '新用户',
+	            color: '#63FF6E',
+	            data: [3030, 3129, 3111, 3222, 3050, 2980, 3509, 3344, 3048],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '本期回流用户',
+	            color: '#FFFA00',
+	            data: [7777, 7666, 7070, 7321, 8190, 8888, 9106, 7540, 7366],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '连续活跃用户',
+	            color: '#FCB130',
+	            data: [9999, 8888, 10001, 12000, 9876, 10500, 11700, 12300, 7777],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '忠实用户',
+	            color: '#FA668B',
+	            data: [20000, 21000, 22000, 23000, 21000, 22000, 20000, 23555, 24011],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '近期流失用户',
+	            color: '#E1ACFF',
+	            data: [5000, 4920, 5310, 4590, 5020, 5100, 6380, 6440, 6666],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '长期流失用户',
+	            color: '#F4589C',
+	            data: [55000, 60000, 53000, 54000, 59000, 61000, 62000, 60030, 55000],
+	            yAxis : 0
+	        }],
+	        plotOptions: {
+	        	column: {
+	                stacking: 'normal'
+	            }
+	        },
+	        xAxis: {
+	        	gridLineWidth: 0,
+	        	tickLength: 0
+	        }
+		});
+	</script>
+</body>
+</html>

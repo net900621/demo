@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /><meta name="Keywords" content="," />
+<meta name="Description" content="此页面的说明" />
+<link href="css/new.css"  rel="stylesheet" type="text/css"/>
+<link href="css/7.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/highcharts-more.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="js/new.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-top">
+			<div class="wrap-top-inner inner">
+				<h1>这是第7页</h1>
+				<div class="user-login">
+					<span>你好，小萌</span>
+					<a href="">退出</a>
+				</div>
+				<div class="search">
+					<input type="text"><button>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-tip">
+			<div class="wrap-tip-inner inner">
+				<a>实时</a>|<a class="cover">趋势</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="wrap-content-top inner">
+				<div class="wrap-content-top-title"><h2>实时数据</h2></div>
+				<div class="wrap-content-top-tab">
+					<div class="tab cur">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-content-inner inner">
+				<div class="chart-column2"></div>
+				<div class="chart-column3"></div>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<div class="wrap-bottom-inner inner">Copyright © 2000-2015 XINHUANET.com All Rights Reserved.</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		columnChart($('.chart-column2'), {
+			series: [{
+	            type: 'column',
+	            name: '2015/07/01-2015/07/07',
+	            color: '#DC61B6',
+	            data: [12,18,28,19,18,3,2,1],
+	            yAxis : 0
+	        }],
+	        xAxis: {
+	        	categories: ['1-2', '3-5', '6-9', '10-19', '20-49', '50-99', '100-199', '200-299', '300+'],
+	        	gridLineWidth: 0,
+	        	tickLength: 0
+	        },
+	        yAxis: [{
+	            labels:{
+	                format: '{value}%'
+	            }
+            }]
+		});
+		columnChart($('.chart-column3'), {
+			series: [{
+	            type: 'column',
+	            name: '2015/07/01-2015/07/07',
+	            color: '#63FF6E',
+	            data: [12, 18, 27, 20, 18, 5, 3, 0.5, 0.5],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '2015/07/01-2015/07/07',
+	            color: '#FFFA00',
+	            data: [13, 19, 30, 23, 19, 4, 2, 1, 0.2],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '2015/07/01-2015/07/07',
+	            color: '#FCB130',
+	            data: [10, 25, 24, 17, 16, 6, 0.5, 1.5, 0.5],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '2015/07/01-2015/07/07',
+	            color: '#FA668B',
+	            data: [11, 23, 23, 19, 18.5, 3.5, 2.5, 1, 0.2],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '2015/07/01-2015/07/07',
+	            color: '#E1ACFF',
+	            data: [14, 18, 18, 16, 10, 5, 1, 1.6, 0.5],
+	            yAxis : 0
+	        }],
+	        plotOptions: {
+	            series: {
+	                pointPadding: 0,
+	                groupPadding: 0.1
+	            }
+	        },
+	        xAxis: {
+	        	gridLineWidth: 0,
+	        	tickLength: 0
+	        },
+	        yAxis: [{
+	            labels:{
+	                format: '{value}%'
+	            }
+            }]
+		});
+	</script>
+</body>
+</html>
