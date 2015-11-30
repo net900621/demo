@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /><meta name="Keywords" content="," />
+<meta name="Description" content="此页面的说明" />
+<link href="css/new.css"  rel="stylesheet" type="text/css"/>
+<link href="css/9.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/highcharts-more.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="js/new.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-top">
+			<div class="wrap-top-inner inner">
+				<h1>这是第9页</h1>
+				<div class="user-login">
+					<span>你好，小萌</span>
+					<a href="">退出</a>
+				</div>
+				<div class="search">
+					<input type="text"><button>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-tip">
+			<div class="wrap-tip-inner inner">
+				<a>实时</a>|<a class="cover">趋势</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="wrap-content-top inner">
+				<div class="wrap-content-top-title"><h2>实时数据</h2></div>
+				<div class="wrap-content-top-tab">
+					<div class="tab cur">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-content-inner inner">
+				<div class="chart-column4"></div>
+				<div class="second">
+					<div class="chart-pie21"></div>
+					<div class="chart-bar7"></div>
+				</div>
+				<div class="third">
+					<div class="chart-china3"></div>
+					<div class="chart-bar8"></div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<div class="wrap-bottom-inner inner">Copyright © 2000-2015 XINHUANET.com All Rights Reserved.</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		columnChart($('.chart-column4'), {
+			series: [{
+	            type: 'column',
+	            name: '未注册',
+	            color: '#D165C3',
+	            data: [3030, 3129, 3111, 3222, 3050, 2980, 3509, 3344, 3048, 1232, 1235, 2443, 2389, 3409, 1234, 5673, 4323, 1256, 6723, 5615, 1902, 5352, 5415, 1253],
+	            yAxis : 0
+	        }, {
+	            type: 'column',
+	            name: '注册',
+	            color: '#FEED5C',
+	            data: [7777, 7666, 7070, 7321, 8190, 8888, 9106, 7540, 7366, 5555, 3279, 3627, 1033, 3728, 1209, 6986, 3283,9831, 9842, 7874, 1877, 4387, 7953, 5938],
+	            yAxis : 0
+	        }],
+	        plotOptions: {
+	        	column: {
+	                stacking: 'normal'
+	            }
+	        },
+	        xAxis: {
+	        	gridLineWidth: 0,
+	        	tickLength: 0
+	        }
+		});
+		pieChart($('.chart-pie21'), {
+	        title: {
+				text: '所选时间内分享总数<br>15689',
+	            align: 'center',
+	            verticalAlign: 'middle',
+	            x: 0,
+	            y: -170,
+	            style: {
+	            	color: '#ffffff'
+	            }
+			},
+			plotOptions: {
+	            series: {
+	                innerSize: '75%'
+	            }
+            },
+            legend: {
+            	layout: 'horizontal',
+	            align: 'center',
+	            verticalAlign: 'bottom',
+	            width: 300,
+            	itemWidth: 100,
+	        },
+	        series: [{
+	        	name: 'todo',
+	        	data: [
+	        		{ name: '板块1', y: 430.35, color: '#9DAED9' },
+	                { name: '板块2', y: 397.44, color: '#BF5FFF' },
+	                { name: '板块3', y: 331.20, color: '#BA9DFF' },
+	                { name: '板块4', y: 298.08, color: '#2BBEF0' },
+	                { name: '板块5', y: 298.08, color: '#48EBFE' },
+	                { name: '板块6', y: 463.68, color: '#9EFBF2' },
+	                { name: '板块7', y: 463.68, color: '#D3F897' },
+	                { name: '板块8', y: 463.68, color: '#FEEC5D' },
+	                { name: '板块9', y: 629.28, color: '#FCBE60' },
+	                { name: '板块10', y: 761.16, color: '#FB8AB3' },
+	                { name: '板块11', y: 100.16, color: '#FB24B3' },
+	                { name: '板块12', y: 71.16, color: '#C88AB3' },
+	                { name: '板块13', y: 56.16, color: '#B4FAB3' },
+	                { name: '板块14', y: 11.16, color: '#A08432' }
+                ]
+            }]
+		});
+	</script>
+</body>
+</html>

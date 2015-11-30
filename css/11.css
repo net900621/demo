@@ -1,0 +1,17 @@
+.chart-pie23{
+	width: 450px;
+	height: 330px;
+	margin: 0 auto;
+	background-color: #3A4147;
+}
+.chart-pie24, .chart-pie25, .chart-pie26{
+	width: 370px;
+	height: 460px;
+	float: left;
+	background-color: #3A4147;
+}
+div.chart-pie25{
+	padding: 80px 50px;
+	width: 300px;
+	height: 300px;
+}

@@ -59,7 +59,10 @@ function lineChart(el, options) {
             tickColor: '#8e958e',
             gridLineColor: '#4d5357',
             gridLineDashStyle: 'solid',
-            labels: {style: {color: '#666'}},
+            labels:{
+                style: {color: '#B0B7AE'},
+                format: '{value}'
+            },
             title: {
                 text: null
             }
@@ -87,15 +90,14 @@ function lineChart(el, options) {
             align: 'right',
             verticalAlign: 'bottom',
             borderWidth: 0,
-            itemStyle: {
-                color: '#ffffff',
-                fontWeight: 'normal'
-            },
             title: {
                 text: '对比：',
                 style: {
                     color: '#ffffff'
                 }
+            },
+            labelFormatter: function () {
+                return '<span style="color: ' + this.color + '">' + this.name + '</span>';
             },
             x: -150
         },

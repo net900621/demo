@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /><meta name="Keywords" content="," />
+<meta name="Description" content="此页面的说明" />
+<link href="css/new.css"  rel="stylesheet" type="text/css"/>
+<link href="css/13.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/highcharts/highcharts.js"></script>
+<script src="js/highcharts/highcharts-more.js"></script>
+<script src="js/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="js/new.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-top">
+			<div class="wrap-top-inner inner">
+				<h1>这是第13页</h1>
+				<div class="user-login">
+					<span>你好，小萌</span>
+					<a href="">退出</a>
+				</div>
+				<div class="search">
+					<input type="text"><button>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-tip">
+			<div class="wrap-tip-inner inner">
+				<a>实时</a>|<a class="cover">趋势</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="wrap-content-top inner">
+				<div class="wrap-content-top-title"><h2>实时数据</h2></div>
+				<div class="wrap-content-top-tab">
+					<div class="tab cur">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="up">6.98%↑</span></div>
+					</div>
+					<div class="tab">
+						<h3>今日累计新用户</h3>
+						<p>840</p>
+						<div>昨日同时段：860 <span class="down">6.98%↓</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-content-inner inner">
+				<div class="chart-line3"></div>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<div class="wrap-bottom-inner inner">Copyright © 2000-2015 XINHUANET.com All Rights Reserved.</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		lineChart($('.chart-line3'), {
+			xAxis: {
+	            categories: [01,02,03,04,05,06,07]
+	        },
+			series: [{
+	            name: '2015/07/01-2015/07/07',
+	            color: '#3effcc',
+	            data: [3000, 2000, 5000, 6500, 6000, 5200, 2000]
+	        }, {
+	            name: '2015/06/01-2015/06/07',
+	            color: '#fa348d',
+	            data: [2000, 3400, 4200, 5300, 6700, 4000, 2000]
+	        }],
+	        yAxis: {
+	            lineWidth: 0,
+	            tickWidth: 0
+	        },
+		});
+	</script>
+</body>
+</html>
