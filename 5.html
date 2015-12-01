@@ -9,6 +9,13 @@
 <script src="js/highcharts/highcharts.js"></script>
 <script src="js/highcharts/highcharts-more.js"></script>
 <script src="js/highcharts/modules/exporting.js"></script>
+
+<script src="http://code.highcharts.com/maps/modules/map.js"></script>
+<script src="http://code.highcharts.com/maps/modules/data.js"></script>
+<!--<script src="http://code.highcharts.com/maps/modules/drilldown.js"></script>-->
+<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/228/zroo4bdf/cn-china-by-peng8.js"></script>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
 <script type="text/javascript" src="js/new.js"></script>
 </head>
 <body>
@@ -82,6 +89,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		chinaMap($('.chart-china'));
 		pieChart($('.chart-pie16'), {
 	        title: {
 				text: '累计新增用户量<br>15689',

@@ -190,7 +190,6 @@ function barChart(el, options) {
         series: []
     };
     el.highcharts($.extend(true, {}, settings, options));
-    console.log(options.title.h1 || options.title.h2);
     if(options.title.h1 || options.title.h2) {
         chartTools.setTitle(el, options.title);
     }
@@ -359,4 +358,88 @@ function columnChart(el, options) {
         series: []
     };
     el.highcharts($.extend(true, {}, settings, options));
+}
+
+function chinaMap(el) {
+    Highcharts.setOptions({
+        lang:{
+            drillUpText:"返回 > {series.name}"
+        }
+    });
+
+    var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']),small = $('#container').width() < 400;
+
+    // 给城市设置随机数据
+    $.each(data, function (i) {
+        this.drilldown = this.properties['drill-key'];
+        this.value = i;
+    });
+    //初始化地图
+    el.highcharts('Map', {
+        chart: {
+            backgroundColor: null
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        title : {
+            text : 'highmap 中国地图'
+        },
+        subtitle: {
+            text: null
+        },
+        legend: small ? {} : {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'middle'
+        },
+        //tooltip:{
+        //pointFormat:"{point.properties.cn-name}:{point.value}"
+        //},
+        colorAxis: {
+            min: 0,
+            minColor: '#E6E7E8',
+            maxColor: '#0000FF'
+        },
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'top'
+            }
+        },
+        plotOptions: {
+            map: {
+                states: {
+                    hover: {
+                        color: '#EEDD66'
+                    }
+                }
+            }
+        },
+        series : [{
+            data : data,
+            name: '中国',
+            dataLabels: {
+                enabled: true,
+                format: '{point.properties.cn-name}'
+            }
+        }],
+        drilldown: {
+            activeDataLabelStyle: {
+                color: '#FFFFFF',
+                textDecoration: 'none',
+                textShadow: '0 0 3px #000000'
+            },
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    x: 0,
+                    y: 60
+                }
+            }
+        }
+    });
 }

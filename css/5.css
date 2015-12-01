@@ -48,7 +48,8 @@
 	float: left;
 }
 .chart-china{
-
+	height: 500px;
+	width: 50%;
 }
 .chart-bar4{
 	width: 460px;
