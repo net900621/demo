@@ -5,10 +5,12 @@
 <meta name="Description" content="此页面的说明" />
 <link href="css/new.css"  rel="stylesheet" type="text/css"/>
 <link href="css/x.css"  rel="stylesheet" type="text/css"/>
+<link href="css/dateRange.css"  rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 <script src="js/highcharts/highcharts.js"></script>
 <script src="js/highcharts/highcharts-more.js"></script>
 <script src="js/highcharts/modules/exporting.js"></script>
+<script src="js/dateRange.js"></script>
 <script type="text/javascript" src="js/new.js"></script>
 </head>
 <body>
@@ -35,7 +37,9 @@
 				<div class="wrap-content-top-title">
 					<h2>新增用户留存变化</h2>
 					<h3>选择查询时段</h3>
-					<select name="" id="">
+					<select name="" id="date-picker">
+						<option value="">2015/07/01 - 2015/07/07 (7天)</option>
+						<option value="">2015/07/01 - 2015/07/07 (7天)</option>
 						<option value="">2015/07/01 - 2015/07/07 (7天)</option>
 					</select>
 				</div>
@@ -212,6 +216,20 @@
 	            }
             }]
 		});
+var dateRange = new pickerDateRange('date-picker', {
+				isTodayValid : false,
+				//startDate : '2013-04-14',
+				//endDate : '2013-04-21',
+				//needCompare : true,
+				//isSingleDay : true,
+				//shortOpr : true,
+				defaultText : ' 至 ',
+				inputTrigger : 'date-picker',
+				theme : 'ta',
+				success : function(obj) {
+					$("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+				}
+			});
 	</script>
 </body>
 </html>

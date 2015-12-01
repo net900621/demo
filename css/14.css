@@ -1,0 +1,8 @@
+.wrap-content-search-header{
+	color: #b0b7ae;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.wrap-content-search-header span,.wrap-content-search-header select{
+	margin-right: 10px;
+}

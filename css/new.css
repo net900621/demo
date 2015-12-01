@@ -1,6 +1,6 @@
 /* reset */
 body,form,h1,h2,h3,h4,h5,ul,ol,li,dl,dt,dd,p,input,textarea,table,th,td,iframe,button{margin:0;padding:0}
-body,input,textarea{font-size:12px;font-family:microsoft yahei}
+body,input,textarea{font-size:12px;line-height: 24px;}
 input,textarea{outline:none;}
 textarea{ resize:none;}
 ul,ol{list-style:none}
@@ -22,6 +22,7 @@ body{
 .inner{
 	width: 1200px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 /*顶部公用模块 start*/
@@ -154,6 +155,12 @@ body{
 .wrap-content-inner{
 	position: relative;
 }
+h3.wrap-content-ctitle{
+	color: #00ffcd;
+	font-size: 20px;
+	margin: 10px 0;
+	font-weight: 100;
+}
 /*业务区域 end*/
 
 
@@ -208,3 +215,31 @@ body{
 	line-height: 150px;
 }
 /*页尾版权声明 end*/
+
+
+
+.clearf{
+	clear: both;
+}
+
+select{
+    height: 24px;
+    /*width: 235px;*/
+    border: none;
+    background-color:#4d5357;
+    font-weight: normal;
+    font-size: 14px;
+    color: #b0b7ae;         
+}
+
+.btn{
+	display: inline-block;
+    line-height: 24px;
+    padding: 0 20px;
+    margin: 0 10px 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ff3f2b;
+    cursor: pointer;
+}

@@ -50,7 +50,7 @@ select{
     border-radius: 12px;
 }
 
-table tr th{
+.wrap-content-table table tr th{
     width:129px;
     border-right: 1px solid #3a4147;
     line-height: 40px;
@@ -58,14 +58,15 @@ table tr th{
     color: #f0f6e1;
     font-size: 16px;
     font-weight: normal;
+    text-align: center;
 }
 
-table{
+.wrap-content-table table{
     border-collapse: collapse;
     border: none;
 }
 
-table tr td{
+.wrap-content-table table tr td{
     width:130px;
     line-height: 40px;
     font-size: 14px;
@@ -73,20 +74,20 @@ table tr td{
     text-align: center;
 }
 
-table tr:nth-child(even) {
+.wrap-content-table table tr:nth-child(even) {
     background-color: #373e44;    
 }
 
-table tr:hover{
+.wrap-content-table table tr:hover{
     background-color: #4e6568;
 }
 
-table .thead:hover{
+.wrap-content-table table .thead:hover{
     background-color: #373e44;   
     opacity: 1;  
 }
 
-table td:hover,table th:hover{
+.wrap-content-table table td:hover,table th:hover{
 
 }
 
