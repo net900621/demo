@@ -74,6 +74,29 @@ body{
 }
 /*顶部公用模块 end*/
 
+/*顶部tab start*/
+.wrap-tab{
+	background-color: #2f363d;
+	text-align: center;
+}
+.wrap-tab span{
+	display: inline-block;
+	padding: 0 80px;
+	margin: 25px 0;
+	color: #e2e8d5;
+	border-left: 1px groove #e2e8d5;
+	font-size: 16px;
+	cursor: pointer;
+}
+.wrap-tab span:last-child{
+	border-right: 1px groove #e2e8d5;	
+}
+.wrap-tab span.cur{
+	color: #0ad3ad;
+	font-size: 18px;
+}
+/*顶部tab end*/
+
 /*顶部绿条 start*/
 .wrap-tip{
 	height: 40px;
@@ -103,11 +126,27 @@ body{
 }
 .wrap-content-top-title{
 	height: 70px;
+	overflow: hidden;
 }
 .wrap-content-top-title h2{
 	color: #e2e8d5;
 	font-size: 20px;
 	line-height: 70px;
+	float: left;
+}
+.wrap-content-top-title h3{
+	float: left;
+	color: #b0b7ae;
+	line-height: 70px;
+	font-size: 14px;
+}
+.wrap-content-top-title div{
+	margin-top: 25px;
+	float: right;
+}
+.wrap-content-top-title div span.discheck{
+	background-color: #6e3938;
+	color: #6e7378;
 }
 .wrap-content-top-tab{
 	height: 105px;
@@ -120,6 +159,11 @@ body{
 	background-color: #b0b7ae;
 	height: 90px;
 	margin-top: 15px;
+}
+.wrap-content-top-tab .tab .show{
+	margin-left: 70px;
+	margin-top: -5px;
+	border-radius: 10px;
 }
 .wrap-content-top-tab .tab h3{
 	height: 30px;
@@ -161,6 +205,38 @@ h3.wrap-content-ctitle{
 	margin: 10px 0;
 	font-weight: 100;
 }
+.wrap-content-top-tip{
+	width: 100%;
+	height: 50px;
+}
+.wrap-content-top-tip div{
+	float: left;
+	width: 11.02%;
+	background-color: #b0b7ae;
+	color: #555852;
+	border-left: 1px solid;
+	margin-top: 10px;
+	height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+}
+.wrap-content-top-tip div.slice2{
+	width: 49.5%;
+}
+.wrap-content-top-tip div.slice3{
+	width: 33.3%;
+}
+.wrap-content-top-tip div.slice4{
+	width: 24.8%;
+}
+.wrap-content-top-tip div.cur{
+	height: 50px;
+	margin-top: 0;
+	background-color: #f0f6e1;
+	color: #000;
+	line-height: 50px;
+}
 /*业务区域 end*/
 
 
@@ -186,8 +262,8 @@ h3.wrap-content-ctitle{
 	background-color: #ff0000;
 	color: #ffffff;
 	font-size: 14px;
-	padding: 2px 5px;
-	line-height: 14px;
+	padding: 3px 5px;
+	line-height: 16px;
 	border-radius: 4px;
 }
 #chart-line-add{
@@ -203,7 +279,7 @@ h3.wrap-content-ctitle{
 #chart-bar-comp-add{
 	position: absolute;
 	top: 895px;
-	left: 1120px;
+	left: 1110px;
 }
 /*todo 添加数据 end*/
 
@@ -242,4 +318,19 @@ select{
     color: #fff;
     background-color: #ff3f2b;
     cursor: pointer;
+}
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}
+.cen5{
+	width: 50%;
+}
+.cen3{
+	width: 33.33%;
+}
+.oh{
+	overflow: hidden;
 }

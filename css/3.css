@@ -1,9 +1,11 @@
+.highcharts-container{
+	background-color: #3A4147;
+}
 .chart-column-line{
 	width: 100%;
 	height: 385px;
 }
 .chart-pie6, .chart-pie7{
-	width: 50%;
 	height: 450px;
 	display: inline-block;
 	background-color: #3A4147;
