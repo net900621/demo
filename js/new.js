@@ -363,21 +363,78 @@ function columnChart(el, options) {
 function chinaMap(el) {
     Highcharts.setOptions({
         lang:{
-            drillUpText:"返回 > {series.name}"
+            drillUpText:"返回 > 中国"
         }
     });
-
-    var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']),small = $('#container').width() < 400;
-
+    var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']);
+    //给定范围随机数生成器 just for fun, wait to delete
+    function random(range){
+        var min = Math.min(range[0], range[1]);
+        var max = Math.max(range[0], range[1]);
+        var diff = max - min;
+        var number = Math.round(Math.random() * diff) + min;
+        return number;
+    }
     // 给城市设置随机数据
     $.each(data, function (i) {
         this.drilldown = this.properties['drill-key'];
-        this.value = i;
+        this.value = random([1, 100]);
     });
     //初始化地图
     el.highcharts('Map', {
+        colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9', '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'],
         chart: {
-            backgroundColor: null
+            backgroundColor: null,
+            width: 500,
+            height: 500,
+            events: {
+                drilldown: function (e) {
+                    if (!e.seriesOptions) {
+                        var chart = this;
+                        var cname = e.point.properties["cn-name"];
+                        chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>');
+                        console.log("data.hcharts.cn/jsonp.php?filename=GeoMap/json/"+ e.point.drilldown+".geo.json");
+                        // 加载城市数据
+                        $.ajax({
+                            type: "GET",
+                            url: "http://data.hcharts.cn/jsonp.php?filename=GeoMap/json/"+ e.point.drilldown+".geo.json",
+                            contentType: "application/json; charset=utf-8",
+                            dataType:'jsonp',
+                            crossDomain: true,
+                            success: function(json) {
+                                data = Highcharts.geojson(json);           
+                                $.each(data, function (i) {         
+                                    this.value = random([1, 100]);
+                                    this.events = {};
+                                    this.events.click = function(e) {
+                                        console.log(cname + ' ' + e.point.name);
+                                        console.log(e.point);
+                                    };
+                                });
+                                chart.hideLoading();
+                                chart.addSeriesAsDrilldown(e.point, {
+                                    name: e.point.name,
+                                    data: data,                             
+                                    dataLabels: {
+                                        enabled: true,
+                                        format: '{point.name}'
+                                    }
+                                });
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                            }
+                        });
+                    }
+                    //this.setTitle(null, { text: cname });
+                },
+                drillup: function () {
+                    //this.setTitle(null, { text: '中国' });
+                }
+            }
+        },
+        tooltip: {
+            enabled: false
         },
         credits: {
             enabled: false
@@ -386,29 +443,22 @@ function chinaMap(el) {
             enabled: false
         },
         title : {
-            text : 'highmap 中国地图'
+            text : null
         },
         subtitle: {
             text: null
         },
-        legend: small ? {} : {
-            layout: 'vertical',
-            align: 'left',
-            verticalAlign: 'middle'
+        legend: {
+            enabled: false
         },
-        //tooltip:{
-        //pointFormat:"{point.properties.cn-name}:{point.value}"
-        //},
         colorAxis: {
-            min: 0,
-            minColor: '#E6E7E8',
-            maxColor: '#0000FF'
+            // min: 1,
+            // max: 60,
+            minColor: '#efecf3',
+            maxColor: '#445159'
         },
         mapNavigation: {
-            enabled: true,
-            buttonOptions: {
-                verticalAlign: 'top'
-            }
+            enabled: false
         },
         plotOptions: {
             map: {
@@ -421,17 +471,17 @@ function chinaMap(el) {
         },
         series : [{
             data : data,
-            name: '中国',
             dataLabels: {
-                enabled: true,
+                enabled: false,
                 format: '{point.properties.cn-name}'
             }
         }],
         drilldown: {
             activeDataLabelStyle: {
+                enabled: false,
                 color: '#FFFFFF',
                 textDecoration: 'none',
-                textShadow: '0 0 3px #000000'
+                textShadow: false
             },
             drillUpButton: {
                 relativeTo: 'spacingBox',
@@ -439,6 +489,12 @@ function chinaMap(el) {
                     x: 0,
                     y: 60
                 }
+            }
+        },
+        loading: {
+            style: {
+                backgroundColor: '#2f363e',
+                opacity: 0.5
             }
         }
     });
