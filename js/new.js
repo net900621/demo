@@ -393,14 +393,11 @@ function chinaMap(el) {
                         var chart = this;
                         var cname = e.point.properties["cn-name"];
                         chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>');
-                        console.log("data.hcharts.cn/jsonp.php?filename=GeoMap/json/"+ e.point.drilldown+".geo.json");
                         // 加载城市数据
                         $.ajax({
-                            type: "GET",
-                            url: "http://data.hcharts.cn/jsonp.php?filename=GeoMap/json/"+ e.point.drilldown+".geo.json",
-                            contentType: "application/json; charset=utf-8",
-                            dataType:'jsonp',
-                            crossDomain: true,
+                            url:"http://123.56.143.227:8080/mapJson/" + e.point.drilldown + ".geo.json",
+                            type:"GET",
+                            dataType:"json",   
                             success: function(json) {
                                 data = Highcharts.geojson(json);           
                                 $.each(data, function (i) {         
@@ -422,7 +419,7 @@ function chinaMap(el) {
                                 });
                             },
                             error: function (XMLHttpRequest, textStatus, errorThrown) {
-
+                                console.log(XMLHttpRequest);
                             }
                         });
                     }
