@@ -76,7 +76,7 @@ function lineChart(el, options) {
             }
         },
         tooltip: {
-            valueSuffix: '°C'
+            enabled: false
         },
         credits: {
             enabled: false
@@ -145,7 +145,7 @@ function barChart(el, options) {
             }
         },
         tooltip: {
-            valueSuffix: ''
+            enabled: false
         },
         plotOptions: {
             series: {
@@ -211,7 +211,8 @@ function pieChart(el, options) {
             text: null
         },
         tooltip: {
-            pointFormat: '{point.key}占比：<b>{point.percentage:.2f}%</b>'
+            //pointFormat: '{point.key}占比：<b>{point.percentage:.2f}%</b>'
+            enabled: false
         },
         plotOptions: {
             series: {
@@ -319,11 +320,10 @@ function columnChart(el, options) {
             }
         },
         tooltip: {//todo
-            formatter: function () {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
+            enabled: false
+            // formatter: function () {
+            //     return '<b>' + this.x + '</b><br/>' + this.series.name + ': ' + this.y + '<br/>' + 'Total: ' + this.point.stackTotal;
+            // }
         },
         plotOptions: {
             series: {
@@ -360,28 +360,8 @@ function columnChart(el, options) {
     el.highcharts($.extend(true, {}, settings, options));
 }
 
-function chinaMap(el) {
-    Highcharts.setOptions({
-        lang:{
-            drillUpText:"返回 > 中国"
-        }
-    });
-    var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']);
-    //给定范围随机数生成器 just for fun, wait to delete
-    function random(range){
-        var min = Math.min(range[0], range[1]);
-        var max = Math.max(range[0], range[1]);
-        var diff = max - min;
-        var number = Math.round(Math.random() * diff) + min;
-        return number;
-    }
-    // 给城市设置随机数据
-    $.each(data, function (i) {
-        this.drilldown = this.properties['drill-key'];
-        this.value = random([1, 100]);
-    });
-    //初始化地图
-    el.highcharts('Map', {
+function chinaMap(el, province, city) {
+    var opt = {
         colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9', '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'],
         chart: {
             backgroundColor: null,
@@ -400,12 +380,11 @@ function chinaMap(el) {
                             dataType:"json",   
                             success: function(json) {
                                 data = Highcharts.geojson(json);           
-                                $.each(data, function (i) {         
-                                    this.value = random([1, 100]);
+                                $.each(data, function (i) {
+                                    this.value = city[cname][this.name].value;
                                     this.events = {};
                                     this.events.click = function(e) {
                                         console.log(cname + ' ' + e.point.name);
-                                        console.log(e.point);
                                     };
                                 });
                                 chart.hideLoading();
@@ -467,7 +446,7 @@ function chinaMap(el) {
             }
         },
         series : [{
-            data : data,
+            //data : data,
             dataLabels: {
                 enabled: false,
                 format: '{point.properties.cn-name}'
@@ -493,6 +472,28 @@ function chinaMap(el) {
                 backgroundColor: '#2f363e',
                 opacity: 0.5
             }
+        }
+    };
+    Highcharts.setOptions({
+        lang:{
+            drillUpText:"返回 > 中国"
+        }
+    });
+    //var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']);
+    $.ajax({
+        url:"http://123.56.143.227:8080/mapJson/china.json",
+        type:"GET",
+        dataType:"json",   
+        success: function(json) {
+            $.each(json, function (i) {
+                this.drilldown = this.properties['drill-key'];
+                this.value = testData[this.properties["cn-name"]].value;
+                console.log(json);
+            });
+            el.highcharts('Map', $.extend(true, {}, opt, {series : [{data : json}]}));
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
         }
     });
 }
