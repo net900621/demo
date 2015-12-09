@@ -274,7 +274,10 @@ function columnChart(el, options) {
             backgroundColor: null
         },
         title: {
-            text: 'Stacked column chart'
+            text: '这是一个标题',
+            style: {
+                color: '#ffffff'
+            }
         },
         xAxis: {
             categories: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
@@ -362,7 +365,6 @@ function columnChart(el, options) {
 
 function chinaMap(el, province, city) {
     var opt = {
-        colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9', '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'],
         chart: {
             backgroundColor: null,
             width: 500,
@@ -480,15 +482,17 @@ function chinaMap(el, province, city) {
         }
     });
     //var data = Highcharts.geojson(Highcharts.maps['countries/cn/custom/cn-all-china']);
+    console.log('111');
     $.ajax({
         url:"http://123.56.143.227:8080/mapJson/china.json",
         type:"GET",
         dataType:"json",   
         success: function(json) {
+            console.log(json);
             $.each(json, function (i) {
                 this.drilldown = this.properties['drill-key'];
-                this.value = testData[this.properties["cn-name"]].value;
-                console.log(json);
+                this.value = province[this.properties["cn-name"]].value;
+                console.log(province[this.properties["cn-name"]].value);
             });
             el.highcharts('Map', $.extend(true, {}, opt, {series : [{data : json}]}));
         },
