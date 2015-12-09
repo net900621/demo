@@ -501,3 +501,20 @@ function chinaMap(el, province, city) {
         }
     });
 }
+
+
+function random(range){
+    var min = Math.min(range[0], range[1]);
+    var max = Math.max(range[0], range[1]);
+    var diff = max - min;
+    /*
+     *例如 [1, 20]，则 diff = 19 --> 0 <= Math.round(Math.random() * diff) <= 19
+     *然后再加上最小值，即可随机生成 1 ~ 20 之间的任意数，如果使用 Math.floor() 则
+     *生成 1 ~ 19 之间的任意数，使用 Math.ceil() 则生成 2 ~ 20 之间的任意数
+     */
+    var number = Math.round(Math.random() * diff) + min;
+    return number;
+}
+
+rsort(random([1, data.length]));
+
